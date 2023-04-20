@@ -45,13 +45,13 @@ class MoteusControlNode(Node):
 
         moteusCommand = MoteusCommand()
         moteusCommand.device_id = 1
-        moteusCommand.velocity = self.wheel_left * 10.0
+        moteusCommand.velocity = self.wheel_left * 5.0
         moteusCommand.maximum_torque = 1.7
         moteusCommandStamped.commands.append(moteusCommand)
 
         moteusCommand = MoteusCommand()
         moteusCommand.device_id = 2
-        moteusCommand.velocity = self.wheel_right * 10.0
+        moteusCommand.velocity = self.wheel_right * 5.0
         moteusCommand.maximum_torque = 1.7
         moteusCommandStamped.commands.append(moteusCommand)
 
