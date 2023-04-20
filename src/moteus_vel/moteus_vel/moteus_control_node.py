@@ -24,7 +24,7 @@ class MoteusControlNode(Node):
         # self.timer = self.create_timer(timer_period, self.callback_update)       
         
         # subscribe to cmd_vel
-        self.create_subscription(Twist, 'scurve_cmd_vel', self.cmd_vel_callback, 1)  
+        self.create_subscription(Twist, 'cmd_vel_accel_desel', self.cmd_vel_callback, 1)  #scurve_cmd_vel
         
         # subscribe to moteusStates
         # self.create_subscription(MoteusStateStamped, 'moteus_feedback', self.callback_command, 10)   
@@ -45,13 +45,13 @@ class MoteusControlNode(Node):
 
         moteusCommand = MoteusCommand()
         moteusCommand.device_id = 1
-        moteusCommand.velocity = self.wheel_left * 30.0
+        moteusCommand.velocity = self.wheel_left * 10.0
         moteusCommand.maximum_torque = 1.7
         moteusCommandStamped.commands.append(moteusCommand)
 
         moteusCommand = MoteusCommand()
         moteusCommand.device_id = 2
-        moteusCommand.velocity = self.wheel_right * 30.0
+        moteusCommand.velocity = self.wheel_right * 10.0
         moteusCommand.maximum_torque = 1.7
         moteusCommandStamped.commands.append(moteusCommand)
 
