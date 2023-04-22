@@ -5,3 +5,4 @@ moteus_drive:
     rezero_on_startup: false
     moteus_ids:
       - 1
+      - 2

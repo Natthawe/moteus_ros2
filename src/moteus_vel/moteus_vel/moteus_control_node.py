@@ -35,8 +35,8 @@ class MoteusControlNode(Node):
         V = twist.linear.x
         W = twist.angular.z
 
-        self.wheel_left = (V - (W * self.base_width / 2)) / self.radius_of_wheels
-        self.wheel_right = (V + (W * self.base_width / 2)) / self.radius_of_wheels
+        self.wheel_left = (V + (W * self.base_width / 2)) / self.radius_of_wheels
+        self.wheel_right = (V - (W * self.base_width / 2)) / self.radius_of_wheels
         # print(wheel_left, wheel_right)
         # messages = str(self.wheel_left) + "," + str(self.wheel_right) + '\n'
         moteusCommandStamped = MoteusCommandStamped()
@@ -45,13 +45,13 @@ class MoteusControlNode(Node):
 
         moteusCommand = MoteusCommand()
         moteusCommand.device_id = 1
-        moteusCommand.velocity = self.wheel_left * 5.0
+        moteusCommand.velocity = self.wheel_left * -4.5
         moteusCommand.maximum_torque = 1.7
         moteusCommandStamped.commands.append(moteusCommand)
 
         moteusCommand = MoteusCommand()
         moteusCommand.device_id = 2
-        moteusCommand.velocity = self.wheel_right * 5.0
+        moteusCommand.velocity = self.wheel_right * -4.5
         moteusCommand.maximum_torque = 1.7
         moteusCommandStamped.commands.append(moteusCommand)
 
