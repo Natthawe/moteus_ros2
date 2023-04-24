@@ -24,7 +24,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "moteus_control_node = moteus_vel.moteus_control_node:main"
+            "moteus_control_node = moteus_vel.moteus_control_node:main",
+            "moteus_odom_node = moteus_vel.moteus_odom_node:main"
         ],
     },
 )
